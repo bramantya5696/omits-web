@@ -1,0 +1,45 @@
+const hamburger = document.querySelector(
+    ".navbar .div-hamburger button"
+  );
+const mobile_menu = document.querySelector(".navbar .div-menu");
+const menu_item = document.querySelectorAll(
+  ".navbar .div-menu .menu ul li"
+);
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobile_menu.classList.toggle("active");
+  });
+  
+  menu_item.forEach((item) => {
+    item.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobile_menu.classList.toggle("active");
+    });
+  });
+
+// countdown
+var day, hour, minute, second;
+var x = setInterval(function(){
+  var countDownDate = new Date("July 17, 2022 00:00:00").getTime();
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    day = Math.floor(distance / (1000*60*60*24));
+    hour = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    minute = Math.floor((distance % (1000*60*60)) / (1000*60));
+    second = Math.floor((distance % (1000*60)) / (1000));
+    
+    document.getElementById('day').innerHTML = day;
+    document.getElementById('hour').innerHTML = hour;
+    document.getElementById('minute').innerHTML = minute;
+    document.getElementById('second').innerHTML = second;
+    
+    if(distance < 0){
+        clearInterval(x);
+        document.getElementById('day').innerHTML = "0";
+        document.getElementById('hour').innerHTML = "0";
+        document.getElementById('minute').innerHTML = "0";
+        document.getElementById('second').innerHTML = "0";
+    }
+},1000);
+  // end countdown
