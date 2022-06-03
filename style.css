@@ -171,10 +171,31 @@ img {
 /* header */
 #header .header {
   flex-direction: column;
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "wct wct wct wct wct wct"
+    "wct wct wct wct wct wct"
+    "img img img img img img"
+    "img img img img img img"
+    "img img img img img img"
+    "img img img img img img"
+    "cd cd cd cd cd cd"
+    "cd cd cd cd cd cd";
 }
 #header .header .div-welctag {
+  grid-area: wct;
   width: 100%;
+  height: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 #header .header .div-welctag .welcome {
   font-family: "AlloyInk";
@@ -191,9 +212,22 @@ img {
   /* font-family: "AlloyInk"; */
 }
 #header .header .div-mascot-img {
-  max-width: 150px;
+  grid-area: img;
   height: auto;
-  float: right;
+  display: flex;
+  justify-content: center;
+}
+#header .header .div-mascot-img img {
+  max-width: 150px;
+}
+#header .header .div-countdown {
+  height: 100%;
+  max-width: 400px;
+  grid-area: cd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 #header .header .div-countdown .short-notification {
   font-size: 1rem;
@@ -202,9 +236,10 @@ img {
 }
 #header .header .div-countdown .countdown {
   display: flex;
+  width: 100%;
   margin-top: 20px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 #header .header .div-countdown .countdown > div {
   position: relative;
@@ -234,8 +269,11 @@ img {
 #about .about {
   flex-direction: column;
 }
+#about .about .div-about-icon {
+  text-align: center;
+}
 #about .about .div-about-icon img {
-  max-width: 300px;
+  max-width: 250px;
   /* height: au; */
 }
 #about .about p {
@@ -277,5 +315,84 @@ img {
 }
 /* end about */
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
+  /* #header .header .div-mascot-img {
+    max-width: 300px;
+  } */
+  .container {
+    padding: 100px 50px;
+  }
+  #header .header {
+    padding: 100px 50px;
+    grid-template-areas:
+      "wct wct wct img img img"
+      "wct wct wct img img img"
+      "cd cd cd img img img"
+      "cd cd cd img img img";
+  }
+  #header .header .div-welctag {
+    text-align: initial;
+    align-items: flex-start;
+  }
+  #header .header .div-mascot-img img {
+    max-width: 250px;
+  }
+  #header .header .div-countdown {
+    align-items: flex-start;
+  }
+}
+@media (min-width: 800px) {
+  #header .header {
+    padding: 100px;
+  }
+  #header .header .div-welctag .welcome {
+    font-size: calc(1.75rem * 1.618);
+  }
+  #header .header .div-welctag .tagline {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 1000px) {
+  #header .header {
+    grid-row-gap: 2rem;
+    grid-template-areas:
+      "wct wct wct wct img img"
+      "wct wct wct wct img img"
+      "cd cd cd cd img img"
+      "cd cd cd cd img img";
+  }
+  #header .header .div-welctag .welcome {
+    font-size: calc(2rem * 1.618);
+  }
+  #header .header .div-welctag .tagline {
+    font-size: 2rem;
+  }
+  #header .header .div-countdown .short-notification {
+    font-size: 1.5rem;
+  }
+  #header .header .div-countdown .countdown {
+    margin-top: 50px;
+  }
+  #header .header .div-countdown .countdown > div .digits {
+    font-size: calc(2rem * 1.618 * 1.618);
+    top: -30%;
+    left: 50%;
+  }
+  #header .header .div-countdown .countdown > div .image-block {
+    max-width: 80px;
+  }
+  #header .header .div-countdown .countdown > div .bottom-digits {
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+  }
+}
+@media (min-width: 1200px) {
+  #header .header {
+    padding: 100px 100px;
+  }
+  #header .header .div-welctag .welcome {
+    font-size: calc(2rem * 1.618 * 1.618);
+  }
 }
