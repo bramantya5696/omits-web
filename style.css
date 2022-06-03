@@ -26,11 +26,11 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: url("images/ornamen-07.png");
+  /* background: url("images/ornamen-07.png");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
 }
 .container {
   min-height: 100vh;
@@ -53,8 +53,8 @@ img {
   font-weight: 700;
 }
 .navbar {
-  background-color: #5aa8da;
-  /* background-color: black; */
+  background-color: #ffffff8f;
+  backdrop-filter: blur(5px);
   display: flex;
   padding: 0 20px;
   justify-content: space-between;
@@ -73,7 +73,7 @@ img {
   height: auto;
 }
 .navbar .div-menu {
-  background-color: rgba(45, 52, 54, 0.3);
+  background-color: #ffffff8f;
   backdrop-filter: blur(5px);
   color: #ffffff;
   width: 100%;
@@ -83,6 +83,7 @@ img {
   left: 150%;
   transition: 0.5s ease;
   overflow: hidden;
+  border-top: 5px solid #5aa8da;
 }
 .navbar .div-menu.active {
   left: 0;
@@ -96,10 +97,10 @@ img {
   justify-content: center;
 }
 .navbar .div-menu .menu ul li a {
-  color: #ffffff;
+  color: #5aa8da;
   font-size: 20px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 600;
   height: 33px;
   width: fit-content;
   position: relative;
@@ -112,7 +113,7 @@ img {
   height: 100%;
   top: 90%;
   left: 0;
-  background: #ffffff;
+  background: #5aa8da;
   transition: 1s;
 }
 .navbar .div-menu .menu ul li a:hover:after {
@@ -128,8 +129,8 @@ img {
 .navbar .div-hamburger button {
   background: transparent;
   outline: none;
+  border: none;
   cursor: pointer;
-  border: 2px solid #ffffff;
   width: 36px;
   height: 36px;
   border-radius: 3px;
@@ -142,13 +143,13 @@ img {
 .navbar .div-hamburger button.active {
   border-radius: 50%;
 }
-.navbar .div-hamburger button:hover {
+/* .navbar .div-hamburger button:hover {
   background-color: #ffffff;
-}
+} */
 .navbar .div-hamburger button .line {
   /* position: relative; */
   height: 2px;
-  background: #ffffff;
+  background: #5aa8da;
   display: block;
   width: 20px;
   margin: 3px 0;
@@ -170,6 +171,24 @@ img {
 }
 
 /* header */
+#header {
+  background: url("images/ornamen-07.png");
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+#header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #ffffff8f;
+  z-index: -1;
+}
 #header .header {
   width: 100%;
   display: grid;
@@ -386,6 +405,12 @@ img {
   }
 }
 @media (min-width: 700px) {
+  p,
+  ol li,
+  ul li {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
   #about .about .div-about-omits {
     grid-template-areas:
       "ic ic ic sct sct sct"
@@ -430,6 +455,8 @@ img {
     width: 70%;
     height: 66px;
     position: initial;
+    border: none;
+    border-radius: 0;
   }
   .navbar .div-menu .menu {
     height: 100%;
