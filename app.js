@@ -43,3 +43,4 @@ var x = setInterval(function(){
     }
 },1000);
   // end countdown
+  document.getElementById("year").innerHTML = new Date().getFullYear();
