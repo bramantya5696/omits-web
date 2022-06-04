@@ -44,3 +44,21 @@ var x = setInterval(function(){
 },1000);
   // end countdown
   document.getElementById("year").innerHTML = new Date().getFullYear();
+
+  // Counter-up
+  $(document).ready(function () {
+    $(".counter-up").counterUp({
+      delay: 10,
+      time: 500
+    });
+  });
+  // end Counter-up
+
+  // reveal address and social media
+  var boxtitle = document.querySelector(".contact .div-contact-link-map .div-address-link .box .box-title");
+  $(document).ready(function(){
+    $(boxtitle).style.maxWidth = "200px";
+    $(boxtitle).style.maxHeight = "40px";
+    $(boxtitle).style.top = "0%";
+  });
+    // end reveal address and social media
