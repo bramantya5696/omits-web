@@ -55,10 +55,10 @@ var x = setInterval(function(){
   // end Counter-up
 
   // reveal address and social media
-  var boxtitle = document.querySelector(".contact .div-contact-link-map .div-address-link .box .box-title");
-  $(document).ready(function(){
-    $(boxtitle).style.maxWidth = "200px";
-    $(boxtitle).style.maxHeight = "40px";
-    $(boxtitle).style.top = "0%";
-  });
+  // var boxtitle = document.querySelector(".contact .div-contact-link-map .div-address-link .box .box-title");
+  // $(document).ready(function(){
+  //   $(boxtitle).style.maxWidth = "200px";
+  //   $(boxtitle).style.maxHeight = "40px";
+  //   $(boxtitle).style.top = "0%";
+  // });
     // end reveal address and social media
