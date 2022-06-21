@@ -463,6 +463,66 @@ img {
 }
 /* end subevent */
 
+/* timeline */
+#timeline .timeline {
+  flex-direction: column;
+}
+#timeline .timeline .div-timeline {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  /* border-left: 5px solid #f89419; */
+}
+#timeline .timeline .div-timeline::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: #f89419;
+  top: 0;
+  left: -5px;
+  z-index: -1;
+  /* transform: translateX(-50%); */
+}
+#timeline .timeline .div-timeline .div-timeline-area {
+  position: relative;
+}
+#timeline .timeline .div-timeline .timeline-area {
+  background: #7f6331;
+  /* max-width: 250px; */
+  padding: 10px 20px;
+  position: relative;
+  margin: 5px 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+#timeline .timeline .div-timeline .timeline-area::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #7f6331;
+  border: 3px solid #f89419;
+  top: 50%;
+  border-radius: 50%;
+  left: -1.25px;
+  transform: translate(-50%, -50%);
+}
+#timeline .timeline .div-timeline .timeline-area .timeline-date {
+  color: #c5eafe;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  /* display: inline-block; */
+  width: max-content;
+}
+#timeline .timeline .div-timeline .timeline-area .timeline-box {
+  color: #ffc11d;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+/* end timeline */
+
 /* contact */
 #contact {
   background: url("images/ornamen-07.png");
@@ -712,6 +772,87 @@ img {
     font-size: calc(1.5rem * 1.618);
     margin-bottom: 10px;
   }
+  #timeline .timeline .div-timeline::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #timeline .timeline .div-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #timeline .timeline .div-timeline .div-timeline-area .timeline-area {
+    min-width: 300px;
+    min-height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(even)
+    .timeline-area {
+    transform: translateX(50.5%);
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(odd)
+    .timeline-area {
+    transform: translateX(-50.5%);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(odd)
+    .timeline-area::before {
+    left: initial;
+    right: -23.75px;
+  }
+  #timeline .timeline .div-timeline .timeline-area .timeline-date {
+    position: absolute;
+    top: 50%;
+    font-size: 1.5rem;
+    transform: translateY(-50%);
+    font-weight: 800;
+    color: #7f6331;
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(odd)
+    .timeline-area
+    .timeline-date {
+    left: 120%;
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(even)
+    .timeline-area
+    .timeline-date {
+    right: 120%;
+  }
+  #timeline .timeline .div-timeline .timeline-area .timeline-box {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  /*#timeline .timeline .div-timeline .timeline-area:nth-of-type(even) {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  #timeline .timeline .div-timeline .timeline-area:nth-of-type(even)::before {
+    left: initial;
+    transform: translateY(-50%);
+    right: -15px;
+  } */
 }
 @media (min-width: 800px) {
   #header .header {
@@ -816,6 +957,9 @@ img {
     left: 50%;
     transform: translateX(-50%);
     font-weight: 600;
+  }
+  #timeline .timeline .div-timeline .timeline-area .timeline-box {
+    font-size: 1.75rem;
   }
 }
 @media (min-width: 1200px) {
