@@ -392,7 +392,7 @@ img {
 }
 #about .about .div-competition .competition .competition-box {
   margin: 10px 0;
-  background: rgba(90, 168, 218, 0.75);
+  background: #5aa8da;
   border-radius: 5px;
   padding: 10px;
   color: #ffffff;
@@ -411,6 +411,57 @@ img {
   margin-top: 10px;
 }
 /* end about */
+
+/* subevent */
+#subevent {
+  background: url("images/ornamen-07.png");
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+#subevent::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #ffffff8f;
+  z-index: -1;
+}
+#subevent .subevent {
+  flex-direction: column;
+}
+#subevent .subevent .section-title {
+  margin-bottom: 20px;
+}
+#subevent .subevent .div-subevents-list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+#subevent .subevent .div-subevent-box {
+  border-radius: 5px;
+  padding: 10px;
+  background: #5aa8da;
+  max-width: 250px;
+}
+#subevent .subevent .div-subevent-box h1 {
+  font-weight: 800;
+  color: #ffc11d;
+}
+#subevent .subevent .div-subevent-box .subevent-box-description {
+  margin-top: 10px;
+}
+#subevent .subevent .div-subevent-box .subevent-box-description p {
+  color: #ffffff;
+  text-align: justify;
+}
+/* end subevent */
 
 /* contact */
 #contact {
