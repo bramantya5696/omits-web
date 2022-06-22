@@ -25,6 +25,28 @@ html {
   font-family: "Lato", sans-serif;
   scroll-behavior: smooth;
 }
+body {
+  background: linear-gradient(
+    #c5eafe,
+    #5aa8da,
+    #fff679,
+    #fdef2c,
+    #ffc11d,
+    #f89419
+  );
+  position: relative;
+  z-index: 1;
+}
+body::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #ffffff3f;
+  z-index: -1;
+}
 .container {
   min-height: 100vh;
   width: 100%;
@@ -179,14 +201,14 @@ img {
 
 /* header */
 #header {
-  background: url("images/ornamen-07.png");
+  background: url("OrnamenWeb/awanangin.png");
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   z-index: 1;
 }
-#header::after {
+/* #header::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -195,7 +217,7 @@ img {
   top: 0;
   background: #ffffff8f;
   z-index: -1;
-}
+} */
 #header .header {
   width: 100%;
   display: grid;
@@ -291,6 +313,14 @@ img {
 /* end header */
 
 /* about */
+#about {
+  background: url("OrnamenWeb/awanangin.png");
+  background-position: 50% 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
 #about .about {
   flex-direction: column;
 }
@@ -428,14 +458,14 @@ img {
 
 /* subevent */
 #subevent {
-  background: url("images/ornamen-07.png");
+  background: url("OrnamenWeb/awanangin.png");
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   z-index: 1;
 }
-#subevent::after {
+/* #subevent::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -444,7 +474,7 @@ img {
   top: 0;
   background: #ffffff8f;
   z-index: -1;
-}
+} */
 #subevent .subevent {
   flex-direction: column;
 }
@@ -478,6 +508,10 @@ img {
 /* end subevent */
 
 /* timeline */
+#timeline {
+  background: url("OrnamenWeb/awanangin.png");
+  z-index: -1;
+}
 #timeline .timeline {
   flex-direction: column;
 }
@@ -521,6 +555,7 @@ img {
   background: #7f6331;
   border: 3px solid #f89419;
   top: 50%;
+  z-index: 1;
   border-radius: 50%;
   left: -1.25px;
   transform: translate(-50%, -50%);
@@ -542,14 +577,14 @@ img {
 
 /* contact */
 #contact {
-  background: url("images/ornamen-07.png");
-  background-position: center;
+  background: url("OrnamenWeb/awanangin.png");
+  background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   z-index: 1;
 }
-#contact::after {
+/* #contact::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -558,7 +593,7 @@ img {
   left: 0;
   background: #ffffff8f;
   z-index: -1;
-}
+} */
 #contact .contact {
   flex-direction: column;
 }
