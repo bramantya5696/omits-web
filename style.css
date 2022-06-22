@@ -389,9 +389,10 @@ img {
   margin: 10px 0;
   max-width: 200px;
   padding: 20px;
-  border: 5px solid #5aa8da;
+  border: 5px solid #8669b3;
   border-radius: 5px;
-  /* background: #c5eafe; */
+  /* background: #ffffff34; */
+  backdrop-filter: blur(3px);
 }
 #about .about .div-about-description-2 .div-achievement i,
 #about .about .div-about-description-2 .div-achievement .achievement-box-icon {
@@ -406,7 +407,7 @@ img {
   .div-about-description-2
   .div-achievement
   .achievement-box-shortdesc {
-  color: #5aa8da;
+  color: #8669b3;
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 20px;
