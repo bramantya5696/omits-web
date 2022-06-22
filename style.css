@@ -526,7 +526,7 @@ img {
   transform: translate(-50%, -50%);
 }
 #timeline .timeline .div-timeline .timeline-area .timeline-date {
-  color: #c5eafe;
+  color: #ffffff;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 10px;
@@ -792,18 +792,55 @@ img {
   #timeline .timeline .div-timeline::after {
     left: 50%;
     transform: translateX(-50%);
+    width: 30px;
+    height: 110%;
+    top: -5%;
+    background: url("OrnamenWeb/kayu.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: round;
   }
   #timeline .timeline .div-timeline {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
   }
   #timeline .timeline .div-timeline .div-timeline-area .timeline-area {
-    min-width: 300px;
+    background: none;
+    padding: 10px 45px;
+    max-width: 300px;
     min-height: 75px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  #timeline .timeline .div-timeline .div-timeline-area .timeline-area::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 30%;
+    background: url("OrnamenWeb/batangkayu2.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(even)
+    .timeline-area::after {
+    left: -25%;
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(odd)
+    .timeline-area::after {
+    right: -25%;
+    transform: rotateY(180deg);
   }
   #timeline
     .timeline
@@ -824,21 +861,21 @@ img {
     border-bottom-right-radius: 0;
     text-align: right;
   }
-  #timeline
-    .timeline
-    .div-timeline
-    .div-timeline-area:nth-of-type(odd)
-    .timeline-area::before {
-    left: initial;
-    right: -23.75px;
+  #timeline .timeline .div-timeline .div-timeline-area .timeline-area::before {
+    display: none;
   }
   #timeline .timeline .div-timeline .timeline-area .timeline-date {
     position: absolute;
-    top: 50%;
+    top: 0%;
     font-size: 1.5rem;
-    transform: translateY(-50%);
-    font-weight: 800;
-    color: #7f6331;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 3px;
+    background: url("OrnamenWeb/kayu.jpeg");
+    background-size: center;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   #timeline
     .timeline
@@ -846,7 +883,7 @@ img {
     .div-timeline-area:nth-of-type(odd)
     .timeline-area
     .timeline-date {
-    left: 120%;
+    left: 50%;
   }
   #timeline
     .timeline
@@ -854,7 +891,7 @@ img {
     .div-timeline-area:nth-of-type(even)
     .timeline-area
     .timeline-date {
-    right: 120%;
+    right: 0%;
   }
   #timeline .timeline .div-timeline .timeline-area .timeline-box {
     font-size: 1.5rem;
@@ -975,9 +1012,6 @@ img {
     left: 50%;
     transform: translateX(-50%);
     font-weight: 600;
-  }
-  #timeline .timeline .div-timeline .timeline-area .timeline-box {
-    font-size: 1.75rem;
   }
 }
 @media (min-width: 1200px) {
