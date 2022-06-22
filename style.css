@@ -502,7 +502,10 @@ img {
   position: relative;
 }
 #timeline .timeline .div-timeline .timeline-area {
-  background: #7f6331;
+  background: url("OrnamenWeb/kayu-01.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 120%;
   /* max-width: 250px; */
   padding: 10px 20px;
   position: relative;
@@ -819,6 +822,7 @@ img {
     border-bottom-left-radius: 15px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    text-align: right;
   }
   #timeline
     .timeline
