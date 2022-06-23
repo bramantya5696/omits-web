@@ -27,8 +27,8 @@ html {
 }
 body {
   background: linear-gradient(
-    #c5eafe,
     #5aa8da,
+    #c5eafe,
     #fff679,
     #fdef2c,
     #ffc11d,
@@ -44,8 +44,12 @@ body::after {
   height: 100%;
   left: 0;
   top: 0;
-  background: #ffffff3f;
-  z-index: -1;
+  background: url("OrnamenWeb/awanangin.png");
+  background-color: #ffffff3f;
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: contain;
+  z-index: -2;
 }
 .container {
   min-height: 100vh;
@@ -68,7 +72,7 @@ img {
   font-weight: 700;
 }
 .navbar {
-  background-color: #ffffff8f;
+  background-color: #ffffff28;
   display: flex;
   padding: 0 20px;
   justify-content: space-between;
@@ -95,7 +99,7 @@ img {
   height: auto;
 }
 .navbar .div-menu {
-  background-color: #ffffff8f;
+  background-color: #ffffff57;
   color: #ffffff;
   width: 100%;
   height: 100vh;
@@ -104,7 +108,7 @@ img {
   left: 150%;
   transition: 0.5s ease;
   overflow: hidden;
-  border-top: 5px solid #5aa8da;
+  border-top: 5px solid #8669b3;
 }
 .navbar .div-menu::before {
   content: "";
@@ -126,7 +130,7 @@ img {
   justify-content: center;
 }
 .navbar .div-menu .menu ul li a {
-  color: #5aa8da;
+  color: #8669b3;
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
@@ -142,7 +146,7 @@ img {
   height: 100%;
   top: 90%;
   left: 0;
-  background: #5aa8da;
+  background: #8669b3;
   transition: 0.2s;
 }
 .navbar .div-menu .menu ul li a:hover:after {
@@ -178,15 +182,12 @@ img {
 .navbar .div-hamburger button .line {
   /* position: relative; */
   height: 2px;
-  background: #5aa8da;
+  background: #8669b3;
   display: block;
   width: 20px;
   margin: 3px 0;
   transition: 0.5s;
   transform-origin: center;
-}
-.navbar .div-hamburger button:hover .line {
-  background: #5aa8da;
 }
 .navbar .div-hamburger button.active .line:nth-child(1) {
   transform: translateY(8px) rotate(-45deg);
@@ -201,12 +202,12 @@ img {
 
 /* header */
 #header {
-  background: url("OrnamenWeb/awanangin.png");
+  /* background: url("OrnamenWeb/awanangin.png");
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 1; */
 }
 /* #header::after {
   content: "";
@@ -247,7 +248,8 @@ img {
 #header .header .div-welctag .welcome {
   font-family: "AlloyInk";
   /* margin-top: 20px; */
-  color: #5aa8da;
+  color: #8669b3;
+  /* text-shadow: 0 0 5px #ffffff; */
   font-size: 2.5rem;
   font-weight: 700;
 }
@@ -314,12 +316,12 @@ img {
 
 /* about */
 #about {
-  background: url("OrnamenWeb/awanangin.png");
+  /* background: url("OrnamenWeb/awanangin.png");
   background-position: 50% 70%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 1; */
 }
 #about .about {
   flex-direction: column;
@@ -459,12 +461,12 @@ img {
 
 /* subevent */
 #subevent {
-  background: url("OrnamenWeb/awanangin.png");
+  /* background: url("OrnamenWeb/awanangin.png");
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 1; */
 }
 /* #subevent::after {
   content: "";
@@ -510,8 +512,8 @@ img {
 
 /* timeline */
 #timeline {
-  background: url("OrnamenWeb/awanangin.png");
-  z-index: -1;
+  /* background: url("OrnamenWeb/awanangin.png");
+  z-index: -1; */
 }
 #timeline .timeline {
   flex-direction: column;
@@ -578,12 +580,12 @@ img {
 
 /* contact */
 #contact {
-  background: url("OrnamenWeb/awanangin.png");
+  /* background: url("OrnamenWeb/awanangin.png");
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 1; */
 }
 /* #contact::after {
   content: "";
