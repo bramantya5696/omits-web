@@ -27,8 +27,8 @@ html {
 }
 body {
   background: linear-gradient(
-    #5aa8da,
     #c5eafe,
+    #5aa8da,
     #fff679,
     #fdef2c,
     #ffc11d,
@@ -108,7 +108,7 @@ img {
   left: 150%;
   transition: 0.5s ease;
   overflow: hidden;
-  border-top: 5px solid #8669b3;
+  border-top: 5px solid #5aa8da;
 }
 .navbar .div-menu::before {
   content: "";
@@ -130,7 +130,7 @@ img {
   justify-content: center;
 }
 .navbar .div-menu .menu ul li a {
-  color: #8669b3;
+  color: #5aa8da;
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
@@ -146,7 +146,7 @@ img {
   height: 100%;
   top: 90%;
   left: 0;
-  background: #8669b3;
+  background: #5aa8da;
   transition: 0.2s;
 }
 .navbar .div-menu .menu ul li a:hover:after {
@@ -182,7 +182,7 @@ img {
 .navbar .div-hamburger button .line {
   /* position: relative; */
   height: 2px;
-  background: #8669b3;
+  background: #5aa8da;
   display: block;
   width: 20px;
   margin: 3px 0;
@@ -248,7 +248,7 @@ img {
 #header .header .div-welctag .welcome {
   font-family: "AlloyInk";
   /* margin-top: 20px; */
-  color: #8669b3;
+  color: #5aa8da;
   /* text-shadow: 0 0 5px #ffffff; */
   font-size: 2.5rem;
   font-weight: 700;
