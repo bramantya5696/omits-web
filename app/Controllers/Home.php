@@ -12,29 +12,29 @@ class Home extends BaseController
 {
     public function index()
     {
-        $model = new User;
-        dd($model->select('role_id')->find(1));
+        // $model = new User;
+        // dd($model->select('role_id')->find(1));
 
-        // dd(password_hash('1234', PASSWORD_BCRYPT));
-        // return view('layouts/main', ['title' => 'tes']);
-        $client = new Client();
-        $client->setAuthConfig(APPPATH . 'cred.json');
-        $client->addScope(Drive::DRIVE);
+        // // dd(password_hash('1234', PASSWORD_BCRYPT));
+        // // return view('layouts/main', ['title' => 'tes']);
+        // $client = new Client();
+        // $client->setAuthConfig(APPPATH . 'cred.json');
+        // $client->addScope(Drive::DRIVE);
 
-        // $permission = new Permission();
-        // $permission->setRole('reader');
-        // $permission->setType('anyone');
-        $service = new Drive($client);
-        // $service->permissions->create('1lKUuzJzcB32dxBWq1DMJhyi1qkw5rQNT', $permission);
-        $files = $service->files->get('16AB54bSRrygEYWVO7hwfqcI81jINNIgS', ['fields'	=>	'webContentLink']);
-        // $listfiles = $service->files->listFiles();
-        // dd($listfiles);
+        // // $permission = new Permission();
+        // // $permission->setRole('reader');
+        // // $permission->setType('anyone');
+        // $service = new Drive($client);
+        // // $service->permissions->create('1lKUuzJzcB32dxBWq1DMJhyi1qkw5rQNT', $permission);
+        // $files = $service->files->get('16AB54bSRrygEYWVO7hwfqcI81jINNIgS', ['fields'	=>	'webContentLink']);
+        // // $listfiles = $service->files->listFiles();
+        // // dd($listfiles);
         // dd($service->files->listFiles());
         // dd($files);
 
 
 
-        return view('tes_upload', ['img' => $files->getWebContentLink()]);
+        return view('home');
     }
 
     public function upload()
