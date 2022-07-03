@@ -10,7 +10,12 @@ class RoleSeeder extends Seeder
     {
         $data = [
             [
+                'id'    =>  1,
                 'name'  =>  'Admin',
+            ],
+            [
+                'id'    =>  2,
+                'name'  =>  'Belum Terverifikasi',
             ],
             [
                 'name'  =>  'Peserta SD',

@@ -53,7 +53,7 @@ class Auth extends BaseController
                 'email'    =>    $data['email'],
                 'wa'    =>    $data['no_wa'],
                 'password'    =>    password_hash($data['password'], PASSWORD_DEFAULT),
-                'role_id'	=>	1,
+                'role_id'	=>	2,
             ]);
             return redirect('login');
         } else {

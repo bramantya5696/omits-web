@@ -2,8 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
 use App\Models\User;
+use CodeIgniter\View\Table;
+use App\Controllers\BaseController;
 
 class Dashboard extends BaseController
 {
@@ -30,14 +31,21 @@ class Dashboard extends BaseController
         }
         $query = $query->orderBy($orderBy, $order);
         $userData = $query->paginate(25);
+
+        $template = [
+            'table_open'	=>	'<table class="table table-hover table-striped table-responsive">'
+        ];
+        $table = new Table($template);
+        $table->setHeading('Id', 'Nama', 'Email', 'Sekolah', 'Nisn', 'No. Wa', 'Kota', 'Provinsi', 'Image', 'Bukti NISN', 'Bukti Bayar', 'Role');
         
         $data = [
-            'user'   =>   $userData,
-            'pager' => $model->pager,
+            'title' =>  'List User',
+            'table' =>  $table->generate($userData),
+            'pager' =>  $model->pager,
         ];
-        dd($data, $model->pager->links());
+        // dd($data, $model->pager->links());
 
-        // return halaman list user
+        return view('dashboard/list_user', $data);
     }
 
     public function profilPeserta()

@@ -16,7 +16,7 @@
         // 'item' => ['judul', 'link', 'ikon']
         'Admin'    =>    [
             ['Dashboard', 'dashboard/admin', 'fas fa-fw fa-tachometer-alt'],
-            ['List Peserta', 'dashboard/listPeserta', 'fas fa-fw fa-users'],
+            ['List User', 'dashboard/listUser', 'fas fa-fw fa-users'],
         ],
         'Peserta'   =>  [
             ['Dashboard', 'dashboard', 'fas fa-fw fa-tachometer-alt'],
@@ -28,6 +28,9 @@
             ['Upload Bukti Bayar', 'pembayaran/bukti', 'fas fa-handshake']
         ]
     ];
+    if (session('role_id') != 1) {
+        unset($menu['Admin']);
+    }
 
     foreach ($menu as $key => $item) :
     ?>

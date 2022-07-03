@@ -35,7 +35,6 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'Home::index');
 $routes->get('dashboard', 'Dashboard::index');
 $routes->get('dashboard/listUser', 'Dashboard::listUser');
-$routes->get('dashboard/listUser/(:any)', 'Dashboard::listUser/$1');
 $routes->get('dashboard/profil', 'Dashboard::profilPeserta');
 
 $routes->post('upload', 'Home::upload');
