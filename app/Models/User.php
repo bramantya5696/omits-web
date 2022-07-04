@@ -41,7 +41,7 @@ class User extends Model
     protected $beforeUpdate   = [];
     protected $afterUpdate    = [];
     protected $beforeFind     = [];
-    protected $afterFind      = [];
+    protected $afterFind      = ['setImageLink'];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
@@ -53,6 +53,16 @@ class User extends Model
     public static function getImageLink(string $imageID)
     {
         return 'https://drive.google.com/uc?id=' . $imageID . '&export=view';
+    }
+
+    public function setImageLink($data)
+    {
+        foreach($data['data'] as $key => $item) {
+            $data['data'][$key]['image'] = $item['image'] ? $this->getImageLink($item['image']) : null;
+            $data['data'][$key]['bukti_nisn'] = $item['bukti_nisn'] ? $this->getImageLink($item['bukti_nisn']) : null;
+            $data['data'][$key]['bukti_bayar'] = $item['bukti_bayar'] ? $this->getImageLink($item['bukti_bayar']) : null;
+        }
+        return $data;
     }
 
     public function fake(Generator &$faker)

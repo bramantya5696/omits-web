@@ -20,13 +20,10 @@ class Admin extends BaseController
         return redirect()->back()->with('success', 'Data berhasil diubah');
     }
 
-    public function exportToExcel($role = 0)
+    public function exportToExcel()
     {
         $model = new User();
         $query = $model->select('id, name, email, sekolah, nisn, wa, kota, provinsi, image, bukti_nisn, bukti_bayar, role_id');
-        if ($role) {
-            $query->where('role_id', $role);
-        }
         $data = $query->find();
         return view('export_excel', [$data]);
     }

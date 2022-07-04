@@ -98,4 +98,33 @@ class Peserta extends BaseController
 
     }
 
+    public function changePassword()
+    {
+        $model = new User();
+        $oldPass = $model->select('password')->find(session('id'))['password'];
+        if (!password_verify($this->request->getPost('old_pass'), $oldPass)) {
+            return redirect()->back()->with('msg', 'Password lama yang anda masukkan salah');
+        }
+
+        if (!$this->validate([
+            'password'	=>	'min_lenght[8]',
+            'confirm_pass'  =>  'matches[password]'
+        ],[
+            'password'	=>	[
+                'min_length'    =>  'Password minimal 8 karakter'
+            ],
+            'confirm_pass'	=>	[
+                'matches'	=>	'Password baru dan konfirmasi password tidak sama'
+            ]
+        ])) {
+            return redirect()->back()->with('msg', $this->validator->listErrors());
+        } else {
+            $data = [
+                'id'	=>	session('id'),
+                'password'  =>  password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            ];
+            $model->save($data);
+        }
+    }
+
 }

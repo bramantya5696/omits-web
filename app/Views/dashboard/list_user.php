@@ -10,7 +10,7 @@
         <div class="card-body">
             <?= $table ?>
         </div>
-        <div class="container">
+        <div class="ml-4">
             <?= $pager->links() ?>
         </div>
     </div>

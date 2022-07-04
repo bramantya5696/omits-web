@@ -10,6 +10,16 @@ class Dashboard extends BaseController
 {
     public function index()
     {
+        $model = new User();
+        $id = session()->get('id');
+        $profilData = $model->select('name, email, sekolah, nisn, wa, kota, provinsi, image, role_id')->find($id);
+        dd($profilData);
+    
+        // return halaman profil
+    }
+
+    public function admin()
+    {
         $session = session();
         $model = new User();
         $user = $model->select('id, name')->find($session->get('id'));
@@ -46,16 +56,6 @@ class Dashboard extends BaseController
         // dd($data, $model->pager->links());
 
         return view('dashboard/list_user', $data);
-    }
-
-    public function profilPeserta()
-    {
-        $model = new User();
-        $id = session()->get('id');
-        $profilData = $model->select('name, email, sekolah, nisn, wa, kota, provinsi, image, role_id')->find($id);
-        dd($profilData);
-
-        // return halaman profil
     }
 
     public function editProfil()
