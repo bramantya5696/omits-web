@@ -31,6 +31,8 @@
                 <ul>
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#subevent">Sub Event</a></li> -->
+                    <!-- <li><a href="#timeline">Timeline</a></li> -->
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -197,6 +199,159 @@
             </div>
         </div>
     </section>
+    <!-- <section id="subevent">
+        <div class="subevent container">
+            <div class="section-title">Sub Event</div>
+            <div class="div-subevent-description">
+                <p>Dapat diketahui bahwa event di OMITS ini tidak hanya sekedar olimpiade saja melainkan terdapat
+                    beberapa sub event lainnya yang tidak kalah menarik dan dapat menambah wawasan teman-teman. Adapun
+                    sub event tersebut diantaranya yaitu:</p>
+            </div>
+            <div class="div-subevents-list">
+                <div class="div-subevent-box">
+                    <h1>IMOQUIZ CHALLENGE</h1>
+                    <div class="subevent-box-description">
+                        <p>Pemberian soal melalui sosial media OMITS sebagai kesempatan
+                            calon peserta OMITS 15th untuk mengikuti OMITS secara gratis</p>
+                    </div>
+                </div>
+                <div class="div-subevent-box">
+                    <h1>VISIONARY SCHOLARSHIP</h1>
+                    <div class="subevent-box-description">
+                        <p>Pemberian dukungan finansial kepada peserta terpilih yang
+                            berprestasi dan kurang mampu </p>
+                    </div>
+                </div>
+                <div class="div-subevent-box">
+                    <h1>OPENING CEREMONY
+                    </h1>
+                    <div class="subevent-box-description">
+                        <p>Acara pembukaan OMITS 15th yang terdiri dari OMITS 2022 dan
+                            MISSION 6.0 </p>
+                    </div>
+                </div>
+                <div class="div-subevent-box">
+                    <h1>TRY OUT</h1>
+                    <div class="subevent-box-description">
+                        <p>Pemberian latihan soal sekaligus simulasi keadaan babak
+                            penyisihan</p>
+                    </div>
+                </div>
+                <div class="div-subevent-box">
+                    <h1>WORKSHOP</h1>
+                    <div class="subevent-box-description">
+                        <p>Kegiatan untuk menambah wawasan mengenai matematika dengan
+                            topik Computer Vision dan Machine Learning</p>
+                    </div>
+                </div>
+                <div class="div-subevent-box">
+                    <h1>MATH IMAGERY</h1>
+                    <div class="subevent-box-description">
+                        <p>Pameran hasil karya-karya dosen atau mahasiswa Departemen
+                            Matematika</p>
+                    </div>
+                </div>
+                <div class="div-subevent-box">
+                    <h1>CLOSING CEREMONY</h1>
+                    <div class="subevent-box-description">
+                        <p>Puncak kegiatan sekaligus tanda berakhirnya rangkaian acara
+                            OMITS 15th </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="timeline">
+        <div class="timeline container">
+            <div class="section-title">Timeline</div>
+            <div class="div-timeline">
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">23 Juli 2022</div>
+                        <div class="timeline-box">Pra OMITS (IMOQUIZ CHALLENGE)</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">24 Juli - 18 Agustus 2022</div>
+                        <div class="timeline-box">Visionary Scholarship by OMITS</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">28 Agustus 2022</div>
+                        <div class="timeline-box">Opening Ceremony OMITS 15th</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">28 Agustus 2022</div>
+                        <div class="timeline-box">Try Out OMITS 15th</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">2 September 2022</div>
+                        <div class="timeline-box">TM Babak Penyisihan</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">3-4 September 2022</div>
+                        <div class="timeline-box">Penyisihan OMITS 2022</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">4 September 2022</div>
+                        <div class="timeline-box">Penyisihan MISSION 6.0</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">10 September 2022</div>
+                        <div class="timeline-box">Workshop OMITS 15th</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">16 September 2022</div>
+                        <div class="timeline-box">TM Babak Semifinal</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">17 September 2022</div>
+                        <div class="timeline-box">Semifinal OMITS 2022 & MISSION 6.0</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">17-18 September 2022</div>
+                        <div class="timeline-box">MATH IMAGERY(IMAJINER GALLERY)</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">18 September 2022</div>
+                        <div class="timeline-box">TM Babak Final OMITS 2022 & MISSION 6.0</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">18 September 2022</div>
+                        <div class="timeline-box">Final OMITS 2022 & MISSION 6.0</div>
+                    </div>
+                </div>
+                <div class="div-timeline-area">
+                    <div class="timeline-area">
+                        <div class="timeline-date">18 September 2022</div>
+                        <div class="timeline-box">Closing Ceremony OMITS 15th</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
     <section id="contact">
         <div class="contact container">
             <div class="section-title">Contact</div>

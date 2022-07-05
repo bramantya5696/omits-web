@@ -25,6 +25,32 @@ html {
   font-family: "Lato", sans-serif;
   scroll-behavior: smooth;
 }
+body {
+  background: linear-gradient(
+    #c5eafe,
+    #5aa8da,
+    #fff679,
+    #fdef2c,
+    #ffc11d,
+    #f89419
+  );
+  position: relative;
+  z-index: 1;
+}
+body::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url("OrnamenWeb/awanangin.png");
+  background-color: #ffffff3f;
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: contain;
+  z-index: -2;
+}
 .container {
   min-height: 100vh;
   width: 100%;
@@ -46,8 +72,7 @@ img {
   font-weight: 700;
 }
 .navbar {
-  background-color: #ffffff8f;
-  backdrop-filter: blur(5px);
+  background-color: #ffffff28;
   display: flex;
   padding: 0 20px;
   justify-content: space-between;
@@ -55,6 +80,14 @@ img {
   position: fixed;
   width: 100%;
   z-index: 1000;
+}
+.navbar::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: -1;
 }
 .navbar .div-logo {
   display: flex;
@@ -66,8 +99,7 @@ img {
   height: auto;
 }
 .navbar .div-menu {
-  background-color: #ffffff8f;
-  backdrop-filter: blur(5px);
+  background-color: #ffffff57;
   color: #ffffff;
   width: 100%;
   height: 100vh;
@@ -77,6 +109,14 @@ img {
   transition: 0.5s ease;
   overflow: hidden;
   border-top: 5px solid #5aa8da;
+}
+.navbar .div-menu::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: -1;
 }
 .navbar .div-menu.active {
   left: 0;
@@ -107,7 +147,7 @@ img {
   top: 90%;
   left: 0;
   background: #5aa8da;
-  transition: 1s;
+  transition: 0.2s;
 }
 .navbar .div-menu .menu ul li a:hover:after {
   width: 100%;
@@ -149,9 +189,6 @@ img {
   transition: 0.5s;
   transform-origin: center;
 }
-.navbar .div-hamburger button:hover .line {
-  background: #5aa8da;
-}
 .navbar .div-hamburger button.active .line:nth-child(1) {
   transform: translateY(8px) rotate(-45deg);
 }
@@ -165,14 +202,14 @@ img {
 
 /* header */
 #header {
-  background: url("images/ornamen-07.png");
+  /* background: url("OrnamenWeb/awanangin.png");
   background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 1; */
 }
-#header::after {
+/* #header::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -181,7 +218,7 @@ img {
   top: 0;
   background: #ffffff8f;
   z-index: -1;
-}
+} */
 #header .header {
   width: 100%;
   display: grid;
@@ -212,6 +249,7 @@ img {
   font-family: "AlloyInk";
   /* margin-top: 20px; */
   color: #5aa8da;
+  /* text-shadow: 0 0 5px #ffffff; */
   font-size: 2.5rem;
   font-weight: 700;
 }
@@ -277,6 +315,14 @@ img {
 /* end header */
 
 /* about */
+#about {
+  /* background: url("OrnamenWeb/awanangin.png");
+  background-position: 50% 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1; */
+}
 #about .about {
   flex-direction: column;
 }
@@ -345,9 +391,10 @@ img {
   margin: 10px 0;
   max-width: 200px;
   padding: 20px;
-  border: 5px solid #5aa8da;
+  border: 5px solid #8669b3;
   border-radius: 5px;
-  /* background: #c5eafe; */
+  /* background: #ffffff34; */
+  backdrop-filter: blur(3px);
 }
 #about .about .div-about-description-2 .div-achievement i,
 #about .about .div-about-description-2 .div-achievement .achievement-box-icon {
@@ -362,7 +409,7 @@ img {
   .div-about-description-2
   .div-achievement
   .achievement-box-shortdesc {
-  color: #5aa8da;
+  color: #8669b3;
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 20px;
@@ -392,7 +439,7 @@ img {
 }
 #about .about .div-competition .competition .competition-box {
   margin: 10px 0;
-  background: rgba(90, 168, 218, 0.75);
+  background: #5aa8da;
   border-radius: 5px;
   padding: 10px;
   color: #ffffff;
@@ -412,16 +459,135 @@ img {
 }
 /* end about */
 
-/* contact */
-#contact {
-  background: url("images/ornamen-07.png");
-  background-position: center;
+/* subevent */
+#subevent {
+  /* background: url("OrnamenWeb/awanangin.png");
+  background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 1; */
 }
-#contact::after {
+/* #subevent::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #ffffff8f;
+  z-index: -1;
+} */
+#subevent .subevent {
+  flex-direction: column;
+}
+#subevent .subevent .section-title {
+  margin-bottom: 20px;
+}
+#subevent .subevent .div-subevents-list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+#subevent .subevent .div-subevent-box {
+  border-radius: 5px;
+  padding: 10px;
+  background: #5aa8da;
+  max-width: 250px;
+}
+#subevent .subevent .div-subevent-box h1 {
+  font-weight: 800;
+  color: #ffc11d;
+}
+#subevent .subevent .div-subevent-box .subevent-box-description {
+  margin-top: 10px;
+}
+#subevent .subevent .div-subevent-box .subevent-box-description p {
+  color: #ffffff;
+  text-align: justify;
+}
+/* end subevent */
+
+/* timeline */
+#timeline {
+  /* background: url("OrnamenWeb/awanangin.png");
+  z-index: -1; */
+}
+#timeline .timeline {
+  flex-direction: column;
+}
+#timeline .timeline .div-timeline {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  /* border-left: 5px solid #f89419; */
+}
+#timeline .timeline .div-timeline::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: #f89419;
+  top: 0;
+  left: -5px;
+  z-index: -1;
+  /* transform: translateX(-50%); */
+}
+#timeline .timeline .div-timeline .div-timeline-area {
+  position: relative;
+}
+#timeline .timeline .div-timeline .timeline-area {
+  background: url("OrnamenWeb/kayu-01.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 120%;
+  /* max-width: 250px; */
+  padding: 10px 20px;
+  position: relative;
+  margin: 5px 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+#timeline .timeline .div-timeline .timeline-area::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #7f6331;
+  border: 3px solid #f89419;
+  top: 50%;
+  z-index: 1;
+  border-radius: 50%;
+  left: -1.25px;
+  transform: translate(-50%, -50%);
+}
+#timeline .timeline .div-timeline .timeline-area .timeline-date {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  /* display: inline-block; */
+  width: max-content;
+}
+#timeline .timeline .div-timeline .timeline-area .timeline-box {
+  color: #ffc11d;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+/* end timeline */
+
+/* contact */
+#contact {
+  /* background: url("OrnamenWeb/awanangin.png");
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1; */
+}
+/* #contact::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -430,7 +596,7 @@ img {
   left: 0;
   background: #ffffff8f;
   z-index: -1;
-}
+} */
 #contact .contact {
   flex-direction: column;
 }
@@ -661,6 +827,125 @@ img {
     font-size: calc(1.5rem * 1.618);
     margin-bottom: 10px;
   }
+  #timeline .timeline .div-timeline::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 110%;
+    top: -5%;
+    background: url("OrnamenWeb/kayu.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: round;
+  }
+  #timeline .timeline .div-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+  #timeline .timeline .div-timeline .div-timeline-area .timeline-area {
+    background: none;
+    padding: 10px 45px;
+    max-width: 300px;
+    min-height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #timeline .timeline .div-timeline .div-timeline-area .timeline-area::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 30%;
+    background: url("OrnamenWeb/batangkayu2.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(even)
+    .timeline-area::after {
+    left: -25%;
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(odd)
+    .timeline-area::after {
+    right: -25%;
+    transform: rotateY(180deg);
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(even)
+    .timeline-area {
+    transform: translateX(50.5%);
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(odd)
+    .timeline-area {
+    transform: translateX(-50.5%);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: right;
+  }
+  #timeline .timeline .div-timeline .div-timeline-area .timeline-area::before {
+    display: none;
+  }
+  #timeline .timeline .div-timeline .timeline-area .timeline-date {
+    position: absolute;
+    top: 0%;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 3px;
+    background: url("OrnamenWeb/kayu.jpeg");
+    background-size: center;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(odd)
+    .timeline-area
+    .timeline-date {
+    left: 50%;
+  }
+  #timeline
+    .timeline
+    .div-timeline
+    .div-timeline-area:nth-of-type(even)
+    .timeline-area
+    .timeline-date {
+    right: 0%;
+  }
+  #timeline .timeline .div-timeline .timeline-area .timeline-box {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  /*#timeline .timeline .div-timeline .timeline-area:nth-of-type(even) {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  #timeline .timeline .div-timeline .timeline-area:nth-of-type(even)::before {
+    left: initial;
+    transform: translateY(-50%);
+    right: -15px;
+  } */
 }
 @media (min-width: 800px) {
   #header .header {

@@ -21,7 +21,7 @@ hamburger.addEventListener("click", () => {
 // countdown
 var day, hour, minute, second;
 var x = setInterval(function(){
-  var countDownDate = new Date("July 17, 2022 00:00:00").getTime();
+  var countDownDate = new Date("July 10, 2022 00:00:00").getTime();
     var now = new Date().getTime();
     var distance = countDownDate - now;
     day = Math.floor(distance / (1000*60*60*24));
