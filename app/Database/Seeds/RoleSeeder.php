@@ -18,15 +18,19 @@ class RoleSeeder extends Seeder
                 'name'  =>  'Belum Terverifikasi',
             ],
             [
+                'id'    =>  3,
                 'name'  =>  'Peserta SD',
             ],
             [
+                'id'    =>  4,
                 'name'  =>  'Peserta SMP',
             ],
             [
-                'name'  =>  'Peseerta SMA',
+                'id'    =>  5,
+                'name'  =>  'Peserta SMA',
             ],
             [
+                'id'    =>  6,
                 'name'  =>  'Peserta MISSION',
             ],
         ];

@@ -39,10 +39,11 @@ $routes->get('/', 'Home::index');
 // Admin
 $routes->get('dashboard/admin', 'Dashboard::admin');
 $routes->get('dashboard/listUser', 'Dashboard::listUser');
-$routes->get('admin/editProfil', 'Admin::editProfil');
+$routes->get('admin/editProfil/(:num)', 'Admin::editProfil/$1');
+$routes->get('admin/delete/(:num)', 'Admin::deleteUser$1');
 $routes->get('admin/export', 'Admin::exportToExcel');
 
-$routes->get('admin/saveProfil', 'Admin::saveProfil');
+$routes->post('admin/saveProfil', 'Admin::saveProfil');
 
 // Peserta
 $routes->get('dashboard', 'Dashboard::index');

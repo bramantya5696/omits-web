@@ -57,10 +57,12 @@ class User extends Model
 
     public function setImageLink($data)
     {
-        foreach($data['data'] as $key => $item) {
-            $data['data'][$key]['image'] = $item['image'] ? $this->getImageLink($item['image']) : null;
-            $data['data'][$key]['bukti_nisn'] = $item['bukti_nisn'] ? $this->getImageLink($item['bukti_nisn']) : null;
-            $data['data'][$key]['bukti_bayar'] = $item['bukti_bayar'] ? $this->getImageLink($item['bukti_bayar']) : null;
+        if ($data['method'] == 'find' && !isset($data['id'])) {
+            foreach($data['data'] as $key => $item) {
+                $data['data'][$key]['image'] = $item['image'] ? $this->getImageLink($item['image']) : null;
+                $data['data'][$key]['bukti_nisn'] = $item['bukti_nisn'] ? $this->getImageLink($item['bukti_nisn']) : null;
+                $data['data'][$key]['bukti_bayar'] = $item['bukti_bayar'] ? $this->getImageLink($item['bukti_bayar']) : null;
+            }
         }
         return $data;
     }
@@ -78,8 +80,8 @@ class User extends Model
             'image'	=>	null,
             'bukti_nisn'    =>  $faker->randomAscii(),
             'bukti_bayar'   =>  $faker->randomAscii(),
-            'password'	=>	$faker->password,
-            'role_id'	=>	$faker->numberBetween(1, 5),
+            'password'	=>	password_hash($faker->password, PASSWORD_DEFAULT),
+            'role_id'	=>	$faker->numberBetween(1, 6),
             'is_active'	=>	$faker->boolean,
         ];
     }

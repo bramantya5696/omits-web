@@ -21,6 +21,12 @@ class Admin extends BaseController
         $model->save($this->request->getPost());
         return redirect()->back()->with('success', 'Data berhasil diubah');
     }
+    public function deleteUser($id)
+    {
+        $model = new User();
+        $model->delete($id);
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
+    }
 
     public function exportToExcel()
     {

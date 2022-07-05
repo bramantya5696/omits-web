@@ -31,7 +31,8 @@ class Dashboard extends BaseController
     public function listUser()
     {
         $model = new User();
-        $query = $model->select('id, name, email, sekolah, nisn, wa, kota, provinsi, image, bukti_nisn, bukti_bayar, role_id');
+        $query = $model->select('users.id, users.name, email, sekolah, nisn, wa, kota, provinsi, image, bukti_nisn, bukti_bayar, user_roles.name as role')
+            ->join('user_roles', 'users.role_id = user_roles.id');
         $kategori = $this->request->getGet('kategori');
         $orderBy = $this->request->getGet('orderBy') ?? 'id';
         $order = $this->request->getGet('order') ?? 'ASC';
@@ -42,18 +43,26 @@ class Dashboard extends BaseController
         $query = $query->orderBy($orderBy, $order);
         $userData = $query->paginate(25);
 
+        array_walk($userData, function (&$item)
+        {
+            $item['image'] = "<a role='button' class='btn btn-primary". ($item['image']?"'":"disabled' aria-disabled='true'")."' href='".($item['image']??"#'")."'>Buka</a>";
+            $item['bukti_nisn'] = "<a role='button' class='btn btn-primary". ($item['bukti_nisn']?"'":"disabled' aria-disabled='true'")."' href='".($item['bukti_nisn']??"#'")."'>Buka</a>";
+            $item['bukti_bayar'] = "<a role='button' class='btn btn-primary". ($item['bukti_bayar']?"'":"disabled' aria-disabled='true'")."' href='".($item['bukti_bayar']??"#'")."'>Buka</a>";
+            $item['action'] = "<a role='button' class='btn btn-primary btn-sm' href='" . route_to('Admin::editProfil', $item['id']) . "'>Edit</a>"
+                ."<a role='button' class='btn btn-danger btn-sm' href='" . route_to('Admin::deleteUser', $item['id']) . "'>Delete</a>";
+        });
+
         $template = [
             'table_open'	=>	'<table class="table table-hover table-striped table-responsive">'
         ];
         $table = new Table($template);
-        $table->setHeading('Id', 'Nama', 'Email', 'Sekolah', 'Nisn', 'No. Wa', 'Kota', 'Provinsi', 'Image', 'Bukti NISN', 'Bukti Bayar', 'Role');
+        $table->setHeading('Id', 'Nama', 'Email', 'Sekolah', 'Nisn', 'No. Wa', 'Kota', 'Provinsi', 'Image', 'Bukti NISN', 'Bukti Bayar', 'Status', 'Action');
         
         $data = [
             'title' =>  'List User',
             'table' =>  $table->generate($userData),
             'pager' =>  $model->pager,
         ];
-        // dd($data, $model->pager->links());
 
         return view('dashboard/list_user', $data);
     }

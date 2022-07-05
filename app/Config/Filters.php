@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\Admin;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -27,6 +28,7 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'login'         => Login::class,
         'no_login'      => NotLoggedIn::class,
+        'admin'         => Admin::class,
     ];
 
     /**
@@ -81,5 +83,10 @@ class Filters extends BaseConfig
             'forgotpassword',
             'resetpassword',
         ]],
+        'admin' =>  ['before' =>[
+            'admin/*',
+            'dashboard/admin',
+            'dashboard/listUser'
+        ]]
     ];
 }
