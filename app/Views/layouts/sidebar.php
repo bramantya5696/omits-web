@@ -20,7 +20,7 @@
         ],
         'Peserta'   =>  [
             ['Dashboard', 'dashboard', 'fas fa-fw fa-tachometer-alt'],
-            ['Edit Profil', 'dashboard/editProfil', 'fas fa-fw fa-user-edit'],
+            ['Edit Profil', 'dashboard/edit', 'fas fa-fw fa-user-edit'],
             ['Ubah Password', 'dashboard/ubahPassword', 'fas fa-fw fa-key'],
         ],
         'Pembayaran'    =>  [

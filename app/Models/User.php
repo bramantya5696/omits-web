@@ -17,7 +17,7 @@ class User extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'name', 'email', 'sekolah', 'nisn', 'wa',
-        'kota', 'provinsi', 'image', 'bikti_nisn',
+        'kota', 'provinsi', 'image', 'bukti_nisn',
         'bukti_bayar', 'password', 'role_id', 'is_active',
     ];
 
