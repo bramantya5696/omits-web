@@ -25,7 +25,7 @@ class Admin implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (!isset(session('role_id')) || session('role_id') != 1) {
+        if (session('role_id') != 1) {
             return redirect('dashboard');
         }
     }

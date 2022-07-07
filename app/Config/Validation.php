@@ -100,7 +100,6 @@ class Validation
 
     public $profil = [
         'name'  =>  'required',
-        'email' =>  'required|valid_email|is_unique[users.email]',
         'sekolah'   =>  'required',
         'wa'    =>  'required',
         'kota'  =>  'required',
@@ -111,9 +110,6 @@ class Validation
     public $profil_errors = [
         'name'  =>  [
             'required'    =>    'Nama tidak boleh kosong',
-        ],
-        'email'  =>  [
-            'required'    =>    'email tidak boleh kosong',
         ],
         'sekolah'  =>  [
             'required'    =>    'Sekolah tidak boleh kosong',
