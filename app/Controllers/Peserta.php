@@ -28,7 +28,6 @@ class Peserta extends BaseController
         
         $nisn_id = $this->upload($bukti_nisn);
         $data['bukti_nisn'] = $nisn_id;
-
         $model->save($data);
 
         return redirect()->back()->with('success', 'Profil berhasil disimpan');
@@ -39,7 +38,7 @@ class Peserta extends BaseController
         $model = new User();
 
         if ($this->validate([
-            'bukti_bayar'	=>	'uploaded[bukti_nisn]|max_size[bukti_nisn,2048]|is_image[bukti_nisn]'
+            'bukti_bayar'	=>	'uploaded[bukti_bayar]|max_size[bukti_bayar,2048]|is_image[bukti_bayar]'
         ], [
             'bukti_bayar'	=>	[
                 'uploaded'	=>  'Terjadi kesalahan saat upload, silakah coba lagi',
@@ -56,6 +55,8 @@ class Peserta extends BaseController
             ]);
 
             return redirect()->back()->with('success', 'Bukti pembayaran berhasil disimpan');
+        } else {
+            return redirect()->back()->with('msg', $this->validator->listErrors());
         }
     }
 
@@ -107,7 +108,7 @@ class Peserta extends BaseController
         }
 
         if (!$this->validate([
-            'password'	=>	'min_lenght[8]',
+            'password'	=>	'min_length[8]',
             'confirm_pass'  =>  'matches[password]'
         ],[
             'password'	=>	[
@@ -124,6 +125,7 @@ class Peserta extends BaseController
                 'password'  =>  password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
             ];
             $model->save($data);
+            return redirect()->back()->with('success', 'Password berhasil diubah');
         }
     }
 

@@ -40,17 +40,16 @@ $routes->get('/', 'Home::index');
 $routes->get('dashboard/admin', 'Dashboard::admin');
 $routes->get('dashboard/listUser', 'Dashboard::listUser');
 $routes->get('admin/editProfil/(:num)', 'Admin::editProfil/$1');
-$routes->get('admin/delete/(:num)', 'Admin::deleteUser$1');
+$routes->get('admin/delete/(:num)', 'Admin::deleteUser/$1');
 $routes->get('admin/export', 'Admin::exportToExcel');
-
 $routes->post('admin/saveProfil', 'Admin::saveProfil');
 
 // Peserta
 $routes->get('dashboard', 'Dashboard::index');
 $routes->get('dashboard/edit', 'Dashboard::editProfil');
 $routes->get('dashboard/ubahPassword', 'Dashboard::changePassword');
-$routes->get('dashboard/pembayaran', 'Dashboard::pembayaran');
-$routes->get('dashboard/pembayaran/bukti', 'Dashboard::buktiBayar');
+$routes->get('pembayaran', 'Dashboard::pembayaran');
+$routes->get('pembayaran/bukti', 'Dashboard::buktiBayar');
 
 $routes->post('peserta/editProfil', 'Peserta::editProfil');
 $routes->post('peserta/pembayaran', 'Peserta::uploadPembayaran');

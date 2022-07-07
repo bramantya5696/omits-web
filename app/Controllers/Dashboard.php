@@ -13,9 +13,10 @@ class Dashboard extends BaseController
         $model = new User();
         $id = session()->get('id');
         $profilData = $model->select('name, email, sekolah, nisn, wa, kota, provinsi, image, role_id')->find($id);
-        dd($profilData);
-    
-        // return halaman profil
+        
+        return view('dashboard/peserta', [
+            'title'	=>	'Dashboard'
+        ]);
     }
 
     public function admin()
@@ -25,13 +26,13 @@ class Dashboard extends BaseController
         $user = $model->select('id, name')->find($session->get('id'));
         // dd(route_to('auth/logout'));
 
-        return view('layouts/main', ['title' => 'Dashboard']);
+        return view('dashboard/admin', ['title' => 'Dashboard']);
     }
 
     public function listUser()
     {
         $model = new User();
-        $query = $model->select('users.id, users.name, email, sekolah, nisn, wa, kota, provinsi, image, bukti_nisn, bukti_bayar, user_roles.name as role')
+        $query = $model->select('users.id, users.name, email, sekolah, nisn, wa, kota, provinsi, bukti_nisn, bukti_bayar, user_roles.name as role')
             ->join('user_roles', 'users.role_id = user_roles.id');
         $kategori = $this->request->getGet('kategori');
         $orderBy = $this->request->getGet('orderBy') ?? 'id';
@@ -45,9 +46,8 @@ class Dashboard extends BaseController
 
         array_walk($userData, function (&$item)
         {
-            $item['image'] = "<a role='button' class='btn btn-primary". ($item['image']?"'":"disabled' aria-disabled='true'")."' href='".($item['image']??"#'")."'>Buka</a>";
             $item['bukti_nisn'] = "<a role='button' class='btn btn-primary". ($item['bukti_nisn']?"'":"disabled' aria-disabled='true'")."' href='".($item['bukti_nisn']??"#'")."'>Buka</a>";
-            $item['bukti_bayar'] = "<a role='button' class='btn btn-primary". ($item['bukti_bayar']?"'":"disabled' aria-disabled='true'")."' href='".($item['bukti_bayar']??"#'")."'>Buka</a>";
+            $item['bukti_bayar'] = "<a role='button' class='btn btn-primary". ($item['bukti_bayar']?"'":"disabled' aria-disabled='true'")."' href='".(User::getImageLink($item['bukti_bayar']??"#'"))."'>Buka</a>";
             $item['action'] = "<a role='button' class='btn btn-primary btn-sm' href='" . route_to('Admin::editProfil', $item['id']) . "'>Edit</a>"
                 ."<a role='button' class='btn btn-danger btn-sm' href='" . route_to('Admin::deleteUser', $item['id']) . "'>Delete</a>";
         });
@@ -56,7 +56,7 @@ class Dashboard extends BaseController
             'table_open'	=>	'<table class="table table-hover table-striped table-responsive">'
         ];
         $table = new Table($template);
-        $table->setHeading('Id', 'Nama', 'Email', 'Sekolah', 'Nisn', 'No. Wa', 'Kota', 'Provinsi', 'Image', 'Bukti NISN', 'Bukti Bayar', 'Status', 'Action');
+        $table->setHeading('Id', 'Nama', 'Email', 'Sekolah', 'Nisn', 'No. Wa', 'Kota', 'Provinsi', 'Bukti NISN', 'Bukti Bayar', 'Status', 'Action');
         
         $data = [
             'title' =>  'List User',
@@ -71,23 +71,32 @@ class Dashboard extends BaseController
     {
         $model = new User();
         $id = session()->get('id');
-        $profilData = $model->select('name, email, sekolah, nisn, wa, kota, provinsi, image, bukti_nisn, role_id')->find($id);
+        $profilData = $model->select('id, name, email, sekolah, nisn, wa, kota, provinsi, image, bukti_nisn, role_id')->find($id);
 
-        // return halaman edit profil
+        return view('dashboard/edit_peserta',[
+            'title' =>  'Edit Profil',
+            'user'	=>	$profilData,
+        ]);
     }
 
     public function changePassword()
     {
-        // return halaman ganti password
+        return view('dashboard/ubah_password',[
+            'title'	=>	'Ubah Password'
+        ]);
     }
 
     public function pembayaran()
     {
-        // return halaman metode pembayaran
+        return view('dashboard/petunjuk_bayar', [
+            'title'	=>	'Petunjuk Pembayaran'
+        ]);
     }
 
     public function buktiBayar()
     {
-        // return halaman upload bukti bayar
+        return view('dashboard/bukti_pembayaran', [
+            'title'	=>	'Upload Bukti Bayar'
+        ]);
     }
 }

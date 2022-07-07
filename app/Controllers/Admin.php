@@ -13,12 +13,20 @@ class Admin extends BaseController
     {
         $model = new User();
         $data = $model->select('id, name, email, sekolah, nisn, wa, kota, provinsi, role_id')->find($id);
+        $roles = $model->builder('user_roles')->select()->get()->getResultArray();
+        return view('dashboard/edit_admin', [
+            'title' =>  'Edit Profil',
+            'user'	=>	$data,
+            'roles'	=>	$roles,
+        ]);
     }
 
     public function saveProfil()
     {
         $model = new User();
-        $model->save($this->request->getPost());
+        $data =$this->request->getPost();
+        $data['role_id'] = (int) $data['role_id'];
+        $model->save($data);
         return redirect()->back()->with('success', 'Data berhasil diubah');
     }
     public function deleteUser($id)
