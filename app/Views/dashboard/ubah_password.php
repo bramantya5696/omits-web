@@ -8,8 +8,11 @@
             <?= $msg ?>
         </div>
     <?php endif ?>
-    <?= session()->getFlashdata('msg') ?? '' ?>
-
+    <?php if ($msg = session()->getFlashdata('msg')) : ?>
+        <div class="alert alert-danger">
+            <?= $msg ?>
+        </div>
+    <?php endif; ?>
     <form action="<?= route_to('Peserta::changePassword') ?>" method="post">
         <?= csrf_field() ?>
         <div class="form-group">

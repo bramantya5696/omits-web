@@ -8,7 +8,11 @@
             <?= $msg ?>
         </div>
     <?php endif ?>
-    <?= session()->getFlashdata('msg') ?? '' ?>
+    <?php if ($msg = session()->getFlashdata('msg')) : ?>
+        <div class="alert alert-danger">
+            <?= $msg ?>
+        </div>
+    <?php endif; ?> 
     <form action="<?= route_to('Peserta::editProfil') ?>" method="post" enctype="multipart/form-data">
         <?= csrf_field() ?>
         <input type="hidden" name="id" id="id" value="<?= $user['id'] ?>">

@@ -57,11 +57,10 @@ class User extends Model
 
     public function setImageLink($data)
     {
-        if ($data['method'] == 'find' && !isset($data['id'])) {
+        if (($data['method'] == 'find' && !isset($data['id'])) || $data['method']=='findAll') {
             foreach($data['data'] as $key => $item) {
-                $data['data'][$key]['image'] = $item['image'] ? $this->getImageLink($item['image']) : null;
-                $data['data'][$key]['bukti_nisn'] = $item['bukti_nisn'] ? $this->getImageLink($item['bukti_nisn']) : null;
-                $data['data'][$key]['bukti_bayar'] = $item['bukti_bayar'] ? $this->getImageLink($item['bukti_bayar']) : null;
+                $data['data'][$key]['bukti_nisn'] = isset($item['bukti_nisn']) ? $this->getImageLink($item['bukti_nisn']) : null;
+                $data['data'][$key]['bukti_bayar'] = isset($item['bukti_bayar']) ? $this->getImageLink($item['bukti_bayar']) : null;
             }
         }
         return $data;

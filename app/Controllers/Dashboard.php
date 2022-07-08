@@ -35,20 +35,21 @@ class Dashboard extends BaseController
         $query = $model->select('users.id, users.name, email, sekolah, nisn, wa, kota, provinsi, bukti_nisn, bukti_bayar, user_roles.name as role')
             ->join('user_roles', 'users.role_id = user_roles.id');
         $kategori = $this->request->getGet('kategori');
-        $orderBy = $this->request->getGet('orderBy') ?? 'id';
-        $order = $this->request->getGet('order') ?? 'ASC';
+        $search = $this->request->getGet('search');
 
+        if ($search) {
+            $query = $query->where("(users.name LIKE '%".$search."%' OR email LIKE '%".$search."%')");
+        }
         if ($kategori) {
             $query = $query->where('role_id', $kategori);
         }
-        $query = $query->orderBy($orderBy, $order);
         $userData = $query->paginate(25);
 
         array_walk($userData, function (&$item)
         {
             $item['bukti_nisn'] = "<a role='button' class='btn btn-primary". ($item['bukti_nisn']?"'":"disabled' aria-disabled='true'")."' href='".($item['bukti_nisn']??"#'")."'>Buka</a>";
-            $item['bukti_bayar'] = "<a role='button' class='btn btn-primary". ($item['bukti_bayar']?"'":"disabled' aria-disabled='true'")."' href='".(User::getImageLink($item['bukti_bayar']??"#'"))."'>Buka</a>";
-            $item['action'] = "<a role='button' class='btn btn-primary btn-sm' href='" . route_to('Admin::editProfil', $item['id']) . "'>Edit</a>"
+            $item['bukti_bayar'] = "<a role='button' class='btn btn-primary". ($item['bukti_bayar']?"'":"disabled' aria-disabled='true'")."' href='".($item['bukti_bayar']??"#'")."'>Buka</a>";
+            $item['action'] = "<a role='button' class='btn btn-primary btn-sm mr-2 mb-2' href='" . route_to('Admin::editProfil', $item['id']) . "'>Edit</a>"
                 ."<a role='button' class='btn btn-danger btn-sm' href='" . route_to('Admin::deleteUser', $item['id']) . "'>Delete</a>";
         });
 
@@ -57,11 +58,15 @@ class Dashboard extends BaseController
         ];
         $table = new Table($template);
         $table->setHeading('Id', 'Nama', 'Email', 'Sekolah', 'Nisn', 'No. Wa', 'Kota', 'Provinsi', 'Bukti NISN', 'Bukti Bayar', 'Status', 'Action');
+
+        $roles = $model->builder('user_roles')->select()->get()->getResultArray();
         
         $data = [
             'title' =>  'List User',
             'table' =>  $table->generate($userData),
             'pager' =>  $model->pager,
+            'roles'	=>	$roles,
+            'req'   =>  $this->request,
         ];
 
         return view('dashboard/list_user', $data);

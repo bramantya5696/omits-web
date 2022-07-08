@@ -8,8 +8,11 @@
             Data berhasil disimpan
         </div>
     <?php endif ?>
-    <?= session()->getFlashdata('msg') ?? '' ?>
-
+    <?php if ($msg = session()->getFlashdata('msg')) : ?>
+        <div class="alert alert-danger">
+            <?= $msg ?>
+        </div>
+    <?php endif; ?>
     <form action="<?= route_to('Peserta::uploadPembayaran') ?>" method="POST" enctype="multipart/form-data">
         <?= csrf_field() ?>
         <div class="form-group">
